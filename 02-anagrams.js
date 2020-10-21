@@ -18,12 +18,12 @@
 // console.log(firstAnagram("elvis", "lives"));    // => true
 
 // T = O(n)
-function secondAnagram(str1, str2) {
-  let sortedStr1 = str1.split("").sort().join(""); // O(n)
-  let sortedStr2 = str2.split("").sort().join(""); // O(n)
+// function secondAnagram(str1, str2) {
+//   let sortedStr1 = str1.split("").sort().join(""); // O(n)
+//   let sortedStr2 = str2.split("").sort().join(""); // O(n)
 
-  return sortedStr1 === sortedStr2 ? true : false; //O(1)
-}
+//   return sortedStr1 === sortedStr2 ? true : false; //O(1)
+// }
 
 // console.log(secondAnagram("gizmo", "sally"));    // => false
 // console.log(secondAnagram("elvis", "lives"));    // => true
@@ -32,9 +32,9 @@ function thirdAnagram(str1, str2) {
   // Code goes here ....
   let obj1 = {};
   let obj2 = {};
+  let status = false;
 
   for (let i = 0; i < str1.length; i++){
-    //str1[0], we want letter to be key, and index to be value;
     let char = str1[i];
     let char2 = str2[i]
     if (obj1[char] !== undefined) {
@@ -48,13 +48,17 @@ function thirdAnagram(str1, str2) {
     } else {
       obj2[char2] = 1;
     }
+
+   for (let key in obj1) {
+      if (key in obj2) {
+        status = true;
+      } else {
+        status = false;
+      }
+    }
   }
-  // console.log("obj1", obj1);
-  // console.log("obj2", obj2);
 
-  return obj1 === obj2;
-
-
+  return status;
 }
 
 console.log(thirdAnagram("gizmo", "sally"));    // => false
