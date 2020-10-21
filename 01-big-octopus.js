@@ -17,13 +17,29 @@ function quadraticBiggestFish(fishes) {
 
 const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
 'ffiiiiisshh', 'fsh', 'fiiiissshhhhhh'];
-// => "fiiiissshhhhhh";
 
-console.log(quadraticBiggestFish(fishies));
 
-// function nlognBiggestFish(fishes) {
-//   // Code goes here ...
-// }
+// console.log(quadraticBiggestFish(fishies)); // => "fiiiissshhhhhh";
+
+function nlognBiggestFish(fishes) {
+  // Code goes here ...
+  if (fishes.length === 1) return fishes;
+
+  let pivot = fishes.shift();
+  let left = fishes.filter(fish => fish.length < pivot.length);
+  let right = fishes.filter(fish => fish.length >= pivot.length);
+  // console.log("left", left)
+  // console.log("pivot", pivot)
+  // console.log("right", right)
+  let sortedFish = [...nlognBiggestFish(left), pivot, ...nlognBiggestFish(right)];
+
+  console.log(sortedFish)
+
+  return sortedFish[sortedFish.length - 1];
+  // return fishes;
+}
+
+console.log(nlognBiggestFish(fishies)); // => "fiiiissshhhhhh";
 
 
 // function linearBiggestFish(fishes) {
