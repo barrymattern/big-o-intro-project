@@ -56,7 +56,7 @@ const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
 //   for (let i = 1; i < fishes.length; i++) {
 //     if (biggestFish.length < fishes[i].length) {
 //       biggestFish = fishes[i];
-//     } 
+//     }
 //   }
 
 //   return biggestFish;
@@ -64,24 +64,29 @@ const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
 
 // console.log(linearBiggestFish(fishies));
 
-tilesArray = ["up", "right-up", "right", "right-down", "down", "left-down", "left", "left-up"]
+// tilesArray = ["up", "right-up", "right", "right-down", "down", "left-down", "left", "left-up"]
 function slowDance(direction, tilesArray) {
     return tilesArray.indexOf(direction);
 }
 
-console.log(slowDance("right", tilesArray));
+// console.log(slowDance("right", tilesArray));
 
 
-// tilesObj = {
-//   "up": 0,
-//   "right-up": 1,
-//   "right": 2,
-//   "right-down": 3,
-//   "down": 4,
-//   "left-down": 5,
-//   "left": 6,
-//   "left-up": 7
-// }
-// function fastDance(direction, tilesObj) {
-//   // Code goes here ...
-// }
+tilesObj = {
+  "up": 0,
+  "right-up": 1,
+  "right": 2,
+  "right-down": 3,
+  "down": 4,
+  "left-down": 5,
+  "left": 6,
+  "left-up": 7
+}
+function fastDance(direction, tilesObj) {
+  // Code goes here ...
+  if (direction in tilesObj) {
+    return tilesObj[direction]
+  }
+}
+
+console.log(fastDance("right", tilesObj));
