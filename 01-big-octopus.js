@@ -21,22 +21,30 @@ const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
 
 // console.log(quadraticBiggestFish(fishies)); // => "fiiiissshhhhhh";
 
+// function _nlognBiggestFish(fishes) {
+//   // Code goes here ...
+//   if (fishes.length < 2) return fishes;
+
+//   let pivot = fishes.shift();
+//   let left = fishes.filter(fish => fish.length < pivot.length);
+//   let right = fishes.filter(fish => fish.length >= pivot.length);
+
+//   let sortedFish = [..._nlognBiggestFish(left), pivot, ..._nlognBiggestFish(right)];
+
+//   return sortedFish;
+// }
+
+// function nlognBiggestFish(fishes) {
+//   let sorted = _nlognBiggestFish(fishes);
+//   return sorted[sorted.length - 1];
+// }
+
 function nlognBiggestFish(fishes) {
-  // Code goes here ...
-  if (fishes.length === 1) return fishes;
+  let sorted = fishes.sort((fish1, fish2) => {
+    return fish2.length - fish1.length;
+  });
 
-  let pivot = fishes.shift();
-  let left = fishes.filter(fish => fish.length < pivot.length);
-  let right = fishes.filter(fish => fish.length >= pivot.length);
-  // console.log("left", left)
-  // console.log("pivot", pivot)
-  // console.log("right", right)
-  let sortedFish = [...nlognBiggestFish(left), pivot, ...nlognBiggestFish(right)];
-
-  console.log(sortedFish)
-
-  return sortedFish[sortedFish.length - 1];
-  // return fishes;
+  return sorted[0];
 }
 
 console.log(nlognBiggestFish(fishies)); // => "fiiiissshhhhhh";
