@@ -50,24 +50,26 @@ const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
 // console.log(nlognBiggestFish(fishies)); // => "fiiiissshhhhhh";
 
 
-function linearBiggestFish(fishes) {
-  let biggestFish = fishes[0];
+// function linearBiggestFish(fishes) {
+//   let biggestFish = fishes[0];
 
-  for (let i = 1; i < fishes.length; i++) {
-    if (biggestFish.length < fishes[i].length) {
-      biggestFish = fishes[i];
-    } 
-  }
+//   for (let i = 1; i < fishes.length; i++) {
+//     if (biggestFish.length < fishes[i].length) {
+//       biggestFish = fishes[i];
+//     } 
+//   }
 
-  return biggestFish;
+//   return biggestFish;
+// }
+
+// console.log(linearBiggestFish(fishies));
+
+tilesArray = ["up", "right-up", "right", "right-down", "down", "left-down", "left", "left-up"]
+function slowDance(direction, tilesArray) {
+    return tilesArray.indexOf(direction);
 }
 
-console.log(linearBiggestFish(fishies));
-
-// tilesArray = ["up", "right-up", "right", "right-down", "down", "left-down", "left", "left-up"]
-// function slowDance(direction, tilesArray) {
-//   // Code goes here ...
-// }
+console.log(slowDance("right", tilesArray));
 
 
 // tilesObj = {
