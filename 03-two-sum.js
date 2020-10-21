@@ -1,6 +1,19 @@
+// T = O(n^2)
 function badTwoSum(arr, targetSum) {
-  // Code goes here ...
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if ((arr[i] + arr[j]) === targetSum) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
+
+const arr = [0, 1, 5, 7];
+console.log(badTwoSum(arr, 6)); // => should be true
+console.log(badTwoSum(arr, 10)); // => should be false
 
 
 function okayTwoSum1(arr, targetSum) {
