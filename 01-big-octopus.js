@@ -1,16 +1,24 @@
-// Sluggish Octopus
+const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
+  'ffiiiiisshh', 'fsh', 'fiiiissshhhhhh'];
+
 function quadraticBiggestFish(fishes) {
-  let biggestFish;
+  let longestFishLength = 0;
+  let longestFish = null;
 
   for (let i = 0; i < fishes.length; i++) {
-    for (let j = i + 1; j < fishes.length; j++) {
-      if (fishes[i].length > fishes[j].length) {
-        biggestFish = fishes[i];
-      } else {
-        biggestFish = fishes[j];
-      }
+    let currFish = fishes[i];
+
+    if (currFish.length > longestFishLength) {
+      longestFishLength = currFish.length;
+      longestFish = fishes[i];
     }
   }
+
+  return longestFish;
+}
+
+console.log(quadraticBiggestFish(fishies));
+
 
   return biggestFish;
 }
