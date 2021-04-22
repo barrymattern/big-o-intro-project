@@ -20,11 +20,11 @@ function quadraticBiggestFish(fishes) {
 console.log(quadraticBiggestFish(fishies));
 
 
-  return biggestFish;
-}
+//   return biggestFish;
+// }
 
-const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
-'ffiiiiisshh', 'fsh', 'fiiiissshhhhhh'];
+// const fishies = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish',
+// 'ffiiiiisshh', 'fsh', 'fiiiissshhhhhh'];
 
 
 // console.log(quadraticBiggestFish(fishies)); // => "fiiiissshhhhhh";
